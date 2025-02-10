@@ -1,0 +1,107 @@
+'''
+class School:
+    sname='st.joseph'
+    sloc='jayanagar'
+
+s1=School()
+s2=School()
+'''
+#TO ACCESS
+'''
+print(School.sname)
+print(School.sloc)
+
+print(s1.sname)
+print(s1.sloc)
+print(s2.sname)
+print(s2.sloc)
+'''
+
+#TO MODIFY
+'''
+School.sloc='Rajajinagar'
+print(School.sloc)
+print(s1.sloc)
+print(s2.sloc)
+
+#output:
+Rajajinagar
+Rajajinagar
+Rajajinagar
+
+'''
+'''
+s1.sloc='Rajajinagar'
+print(School.sloc)
+print(s1.sloc)
+print(s2.sloc)
+
+#output:
+jayanagar
+Rajajinagar
+jayanagar
+'''
+
+
+
+
+
+
+
+#TYPES OF MEMBERS/PROPERTIES/STATES
+# 1) class members  2) object members
+
+class Bank:
+    bname='SBI'
+    bloc='mysore'
+    bifsc='SBIN007'
+
+c1=Bank()
+c1.name='Rajesh'
+c1.phno=8431353667
+c1.accno=123456789
+
+c2=Bank()
+c2.name='Halasadevi'
+c2.phno=9902110556
+c2.accno=987654311
+
+print(c1.bname)
+print(c1.bloc)
+print(c1.bifsc)
+print(c1.name)
+print(c1.phno)
+print(c1.accno)
+
+
+#without constructor
+
+class Bank:
+    bname='SBI'
+    bloc='mysore'
+    bifsc='SBIN007'
+
+c1=Bank()
+c1.name='Rajesh'
+c1.phno=8431353667
+c1.accno=123456789
+
+c2=Bank()
+c2.name='Halasadevi'
+c2.phno=9902110556
+c2.accno=987654311
+
+#with constructor
+
+class Bank:
+    bname='SBI'
+    bloc='mysore'
+    bifsc='SBIN007'
+
+    def __init__(self,name,phno,accno):
+        self.name=name
+        self.phno=phno
+        self.accno=accno
+
+c1=Bank('Rajesh',8431353667,123456789)
+c2=Bank('Halasadevi',9902110556,987654311)

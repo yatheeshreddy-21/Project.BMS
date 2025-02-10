@@ -1,0 +1,86 @@
+                         ADVANCED PYTHON
+
+FUNCTIONAL PROGRAMMING 
+
+1) lambda
+2) map
+3) filter
+
+1) lambda :
+
+--> 'lambda' is a keyword which is used to do some simple calculations.
+
+--> with the help of lambda function we can write the code in a single line.
+
+--> The programms that can be solved using simple if and if else conditions 
+    can be solved using lambda functions.
+
+--> lambda functions are also known as anonymous or nameless function.
+
+--> Since lambda function dont have any name we can not call it.Instead 
+    we can store the address of lambda function into a variable and we 
+    can print the variable.
+
+Syntax:
+
+1) var = lambda args: expression
+
+2) var = lambda args: TSB if cond else FSB
+
+
+
+PROGRAMS :--
+
+#01) WAP to reverse the given string
+'''
+rev=lambda s : s[::-1]
+print(rev(input('Enter the string :')))
+'''
+
+#02) WAP to print ASCII value of given character
+'''
+out=lambda ch : ord(ch)
+print(out(input('Enter the character :')))
+'''
+
+#03) WAP to find the sum of min 2 numbers and max 5 numbers
+'''
+add=lambda a,b,c=0,d=0,e=0 : a+b+c+d+e
+print(add(7,8,9))
+'''
+
+#04) WAP to check whether the given data is mutable or immutable
+'''
+out=lambda val : type(val) in [list,set,dict]
+print(out(eval(input('Enter the data :'))))
+'''
+
+'''
+out=lambda val : 'Mutable' if type(val) in [list,set,dict] else 'Immutable'
+print(out(eval(input('Enter the data :'))))
+'''
+
+#05) WAP to print square if the number is even else print cube
+'''
+out = lambda num : num**2 if num%2==0 else num**3
+print(out(int(input())))
+'''
+
+#06) WAP to return number of characters present in a string if it is palindrome
+#    else return the reversed string
+'''
+out = lambda s : len(s) if s==s[::-1] else s[::-1]
+print(out(input()))
+'''
+
+#07) WAP to check whether the given string is keyword or not
+'''
+import keyword
+out = lambda s : 'KEYWORD' if s in keyword.kwlist else 'NOT A KEYWORD'
+print(out(input()))
+'''
+
+#08) WAP to check whether the integer is ending with zero or not
+
+out = lambda num : 'YES' if num%10==0  else 'NO'
+print(out(int(input())))

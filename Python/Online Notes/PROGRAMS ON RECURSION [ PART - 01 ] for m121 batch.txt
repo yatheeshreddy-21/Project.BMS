@@ -1,0 +1,35 @@
+#RECURSION
+
+#01) WAP to find the factorial of given number
+'''
+def factorial(n):
+    if n==0 or n==1:
+        return 1
+    return n*factorial(n-1)
+
+print(factorial(int(input())))
+'''
+
+#02) WAP to find the sum of n natural numbers
+'''
+def add(n):
+    if n==1:
+        return 1
+    return n+add(n-1)
+
+print(add(int(input())))
+'''
+
+#03) WAP to get the following output ,
+
+#    input :  3
+#    output:  1 2 3 2 1
+
+def sam(n,i=1):
+    print(i , end=' ' )
+    if i==n:
+        return
+    sam(n,i+1)
+    print(i , end=' ')
+
+sam(int(input()))

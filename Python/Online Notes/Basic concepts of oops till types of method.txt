@@ -1,0 +1,209 @@
+             oops (object oriented programming system)
+
+object: It is a real time entity which is having properties and
+        functionalities. 
+               (OR)
+        It is an instance of class.
+
+Class: It is a container / structure where we can store the data
+       and we can utilize stored data.
+               (OR)
+       It is a blueprint consists of properties and 
+       functionalities of real time entity.
+
+--> Basically all the datatypes are inbuilt classes.
+--> We can create our own datatype by using class keyword.
+--> Objects are the variables for user defined datatypes.
+--> All the user defined classes are internally considered as 
+    user defined datatypes.
+
+Syntax: 01) for creating class :
+                                 class class_name:
+                                 	properties/states
+                                 	functionality/behaviour
+        02) for creating object :
+                                 object_name=class_name(args) 
+
+EXAMPLE :   
+class A:
+   a=10
+   b=20           	
+ob1=A()
+ob2=A()
+
+x=100
+type(x)
+<class 'int'>
+type(ob1)
+<class '__main__.A'>
+
+Memory Allocation for class creation :
+
+--> As soon as we create class, control will create dictionary,
+    inside the memory, which consists of key value pair,address
+    will be given to key layer which will get stored with 
+    respect to class_name.
+
+--> All the properties and functionalities will get stored into
+    dictionary in the form of key and value.
+
+--> Reference address will be given to each and every key, 
+    present in dictionary.
+
+Memory Allocation for object creation :
+
+--> As soon as we create object, control will create dictionary,
+    inside the memory, which consists of key value pair,address
+    will be given to key layer which will get stored with 
+    respect to object_name. 
+
+--> All the properties from class dictionary will get stored 
+    into object dictionary with reference address.
+
+--> Control checks for __init__ method, if it exists in object
+    dictionary then it will get invoked by default to initialize
+    object members.
+Syntax to access properties from class and object:
+
+                    cname.pname
+                         (or)
+                    objname.pname
+
+Syntax to modify properties from clas and object:
+
+                 cname.pname=new_value
+                          (or)
+                objname.pname=new_value
+Example:
+#modification with respect to object
+
+class A:
+    a=10
+    b=20
+ob1=A()
+ob2=A()
+
+ob1.a=777
+
+print(ob1.a)
+print(A.a)
+print(ob2.a)
+
+
+#output
+777
+10
+10
+
+#Modification with respect to class
+
+class A:
+    a=10
+    b=20
+ob1=A()
+ob2=A()
+
+A.a=777
+
+print(ob1.a)
+print(A.a)
+print(ob2.a)
+
+
+#output
+777
+777
+777
+
+Note:
+
+If we do modification with respect to class then it affects
+all the objects including class,if we do modification
+with respect to object only that object will get affected, by keeping 
+other objects and class as it is.
+
+
+Types of properties/states : 
+
+01) class/static/Generic members
+02) object/specific members
+
+Example:
+
+class Bank:
+    bname='SBI'
+    bloc='Bengaluru'
+    bifsc='SBIN007'
+
+c1=Bank()
+c1.cname='Susmitha'
+c1.phno=7795310200
+c1.email='susmitha@123'
+
+c2=Bank()
+c2.cname='Priya'
+c2.phno=9902110880
+c2.email='priya@123'
+
+
+
+__init__ method / constructor / Initialization method :
+
+--> It is an inbuilt magic method which is used to initialize
+    members of an object.
+
+--> The first argument for an init method is always 'self'.
+    'self' is an argument which always takes an address of 
+    object,in the process of object creation by default self will
+    take address of an object.
+
+--> Otherthan self we can use any other name but according to 
+    standards we will use self to store object address.
+
+--> Eventhough init is an inbuilt method, the statements which
+    we write inside it are according to user requirement.
+
+--> There is no need of calling the constructor outside of class
+    to initialize the members, because it will invoked or called
+    by default, when the object is created.
+
+Syntax:
+
+ class cname:	
+        def __init__(self,arg1,arg2,...argn):
+        	self.arg1=arg1
+                self.arg2=arg2
+                .
+                .
+                self.argn=argn
+ 
+ obj=cname(val1,val2,...valn)
+
+Example:
+
+#without constructor
+
+class School:
+    sname='DPS'
+    sloc='Dehli'
+
+s1=School()
+s1.name='ABHAY'
+s1.phno=8431363447
+
+s2=School()
+s2.name='CHETANA'
+s2.phno=9902110445
+
+#with constructor
+
+class School:
+    sname='DPS'
+    sloc='Dehli'
+
+    def __init__(self,name,phno):
+        self.name=name
+        self.phno=phno
+
+s1=School('ABHAY',8431363447)
+s2=Scool('CHETANA',9902110445)

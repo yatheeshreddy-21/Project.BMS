@@ -1,0 +1,111 @@
+3) dict comprehension :
+
+It is phenomenon of creating a new dict collection by using 
+single line of instruction.
+
+zip() :
+
+it is an inbuilt function which is used to traverse through 
+multiple collections simultaneously using single for loop.
+
+Syntax : 
+
+for var1,var2,...varn in zip( col1,col2,...coln ):
+	[S.B]
+
+--> Number of variables should be equals to number of collections.
+
+--> Number of iterations is directly proportional to length of 
+    smallest collection.
+
+#Example for zip()
+
+a=[1,2,3]
+b=[10,2.5,'hi','okay',99]
+
+for i,j in zip(a,b):
+    print(i,j)
+
+#output:
+
+1 10
+2 2.5
+3 hi
+
+Syntax :
+
+01) Var={ K:V for var in col }
+02) Var={ K:V for var in col if cond }
+03) Var={ K:V1 if cond else V2 for var in col}
+04) Var={ K:V for var1,var2 in zip(col1,col2) if cond }
+
+
+#PROGRAMS :
+
+#01) WAP to create a dict where n natural numbers acts as keys and
+#    square of natural numbers acts as values
+
+#input  :  5
+#output :  { 1:1 , 2:4 ,3:9 , 4:16 , 5:25 }
+'''
+out={ i:i**2 for i in range(1,int(input())+1)  }
+print(out)
+'''
+
+#02) WAP to map two list collections in the form of dictionary
+
+# input  :  [10,20,3.5]
+#           [3,4]
+
+# output :  { 10:3 , 20:4 } 
+'''
+a=eval(input())
+b=eval(input())
+out={ i:j for i,j in zip(a,b) }
+print(out)
+'''
+
+#03)  input  :  'GoOgLe'
+#     output :  { 'G':71 , 'O':79 , 'L':76 }
+'''
+out={ i:ord(i) for i in input() if 'A'<=i<='Z'}
+print(out)
+'''
+
+#04) input  :  L1 = [8,3.5,'hi',{10,20},3+4j,[1,2]]
+#              L2 = [100,'b',[5,6],800,987,100]
+
+#    output :  { 8:100 , 3.5:'b' , 'hi':[5,6] , 3+4j:987}
+'''
+L1=eval(input())
+L2=eval(input())
+out={ i:j for i,j in zip(L1,L2) if type(i) not in [list,set,dict] }
+print(out)
+'''
+
+#05) input  :  range(1,7)
+#    output :  { 1:1 , 2:4 , 3:27 , 4:16 , 5:25 , 6:36 }
+
+#by using normal python
+'''
+out={}
+for i in range(1,7):
+    if i%2==0:
+        out[i]=i**2
+    else:
+        out[i]=i**3
+print(out)
+'''
+
+#by using dict comprehension
+'''
+out={ i:i**2 if i%2==0 else i**3 for i in range(1,7) }
+print(out)
+'''
+
+#ASSIGNMENT QUESTION
+
+#06) input: [['rajajinagar',8000] , ['basavanagudi',4000] , ['jayanagar',5000]]
+
+#i) fetch area along with rent , where rent is less than 6000
+#ii) fetch area along with rent , where name of area starts with 'j'

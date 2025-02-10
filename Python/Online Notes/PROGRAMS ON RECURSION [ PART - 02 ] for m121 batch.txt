@@ -1,0 +1,62 @@
+STEPS TO CONVERT LOOPING PROGRAMS IN THE FORM OF RECURSION :-
+
+01) Initialization of all the looping variables should be done in
+    formal argument block.
+
+02) Mention termination condition exactly opposite to looping 
+    condition in the form of if statement.
+
+03) return the total output inside the termination condition.
+
+04) Mention logic of prog. as it is by ignoring looping condition
+    and updation
+
+05) Updation of looping variable  should happen in recursive call.
+
+#programs :---->
+
+
+#04) WAP to extract lowercase characters from given string
+
+#by using while loop
+
+s=input()
+out=''
+i=0
+while i<len(s):
+    if s[i].islower():
+        out+=s[i]
+    i+=1
+print(out)
+
+#by using Recursion
+
+def sam(s,out='',i=0):
+    if i>=len(s):
+        return out
+    if s[i].islower():
+        out+=s[i]
+    return sam(s,out,i+1)
+print(sam(input()))
+
+
+#05) WAP to reverse the given integer
+
+#by using while loop
+
+n=int(input())
+out=0
+while n!=0:
+    ld=n%10
+    out=out*10+ld
+    n//=10
+
+#by using Recursion
+
+def sam(n,out=0):
+    if n==0:
+        return out
+    ld=n%10
+    out=out*10+ld
+    return sam(n//10,out)
+print(sam(int(input())))

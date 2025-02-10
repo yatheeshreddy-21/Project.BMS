@@ -1,0 +1,131 @@
+POLYMORPHISM :
+
+It is a phenomenon of using the same operator or method to perform two
+or more different operarions.
+
+Example: 
++
+Single Valued datatype - Addition
+Multi Valued datatype - concatenation
+
+--> As same operator is performing two different tasks, we can say that
+    '+' operator is having polymorphic nature.
+
+polymorphism is explained in two ways :
+
+01) Method overloading
+02) Operator overloading
+
+01) Method Overloading:
+
+--> It is a phenomenon of using multiple methods with same name to perform two
+    or more operations.
+
+--> In python method overloading is not possible, if we try to do overloading
+    it will acts as method overriding.
+
+--> Method overriding means, if we have two methods with same name, if we try to 
+    access previous it will not access,it will try to access latest method.
+
+--> Here previous method is overriden by latest method.
+
+Example:
+
+ def add(a,b):
+    print(a+b)
+
+
+def add(a,b,c):
+    print(a*b*c)
+
+add(4,6,3)       ------>   72
+add(7,5)         ------>   Error
+
+Memory Management :
+
+
+
+
+
+
+
+--> As we know that we can't access previous method
+
+--> If there is a requirement  to access previous method then we can follow a 
+    process known as Monkey patching.
+
+Monkey patching :
+
+--> It is a process of storing the address of previous method into a variable 
+    and calling that method by using that variable.
+
+Example:   
+
+def add(a,b):
+    print(a+b)
+
+p=add
+
+def add(a,b,c):
+    print(a*b*c)
+
+add(4,6,3)   ----->  72
+p(7,5)       ----->  12
+
+Memory Management :
+
+
+
+
+
+
+
+
+
+Operator overloading:
+
+--> It is a phenomenon of by using magic methods we will make the operators to work 
+    on objects.
+--> if we write ob1+ob2 internally it will be stored as ob1.__add__(ob2)
+
+
+Arithmetic             Relational            Bitwise          Assignment
+
+__add__                 __eq__               __and__          __iadd__
+__sub__                 __ne__               __or__           __isub__ 
+__mul__                 __gt__               __xor__          __imul__
+__truediv__             __lt__               __invert__       .
+__floordiv__            __ge__               __lshift__       .
+__mod__                 __le__               __rshift__
+__pow__
+
+
+Example :
+
+class A:
+
+    def __init__(self,x):
+        self.x=x
+
+    def __mul__(self,other):
+        return self.x*other.x
+        
+ob1=A(7)
+ob2=A(3)
+print(ob1*ob2)
+
+#output : 21
+
+
+
+          
+     
+
+
+
+
+
+
+
+
+

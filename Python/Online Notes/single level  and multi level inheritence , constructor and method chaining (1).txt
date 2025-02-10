@@ -1,0 +1,301 @@
+
+1) Single level inheritence :
+
+   It is the type of inhritence in which the properties of the parent 
+class will be derived into child class by considering only one level.
+
+--> Here all the properties of the parent class will be derived at once.
+
+Syntax:      
+         class Pc:
+            [S.B]
+
+         class Cc(Pc):
+            [S.B]
+
+Example:
+'''
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+class B(A):
+    m=50
+    n=60
+
+ob1=B(30,40)
+    
+print(ob1.a,ob1.b,ob1.c,ob1.d,ob1.m,ob1.n)
+'''
+#output : 10 20 30 40 50 60
+
+
+
+Constructor chaining : 
+
+The process of calling or invoking the parent class constructor ,inside
+the child class constructor is called as constructor chaining.
+
+
+Syntax:
+
+ 01) super().__init__(args)
+
+         (OR)
+
+ 02) parent.__init__(self,args)
+
+         (OR)
+
+ 03) super(child,self).__init__(args)
+
+Example:
+
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d,e,f,g,h,i):
+        self.c=c
+        self.d=d
+        self.e=e
+        self.f=f
+        self.g=g
+        self.h=h
+        self.i=i
+
+class B(A):
+    x=50
+    y=60
+
+    def __init__(self,c,d,e,f,g,h,i,z):
+        super().__init__(c,d,e,f,g,h,i)
+        #A.__init__(self,c,d,e,f,g,h,i)
+        #super(B,self).__init__(c,d,e,f,g,h,i)
+        self.z=z
+
+ob1=B(4,6,7,9,8,5,3,2)
+
+Method chaining :
+
+The process of calling or invoking the parent class method ,inside
+the child class method is called as method chaining.
+
+Syntax:
+
+01) super().mname()
+
+         (OR)
+
+02) parent.mname()
+
+         (OR)
+
+03) super(child,self).mname()
+
+
+Example:
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+    def display(self):
+        print(self.c,self.d)
+
+    @classmethod
+    def disp(cls):
+        print(cls.a,cls.b)
+        
+
+class B(A):
+    m=50
+    n=60
+
+    @classmethod
+    def disp(cls):
+        super().disp()
+        #super(B,cls).disp()
+        #A.disp()
+        print(cls.m,cls.n)
+
+
+ob1=B(30,40)
+ob1.disp()
+
+#output :
+
+10 20
+50 60
+
+EXAMPLE:
+
+#constructor and method chaining
+
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+    def display(self):
+        print(self.c,self.d)
+
+class B(A):
+    m=50
+    n=60
+
+    def __init__(self,c,d,z):
+        super().__init__(c,d)
+        #super(B,self).__init__(c,d)
+        #A.__init__(self,c,d)
+        self.z=z
+
+    def display(self):
+        super().display()
+        #super(B,self).display()
+        #A.display(self)
+        print(self.z)
+
+ob1=B(30,40,70)
+ob1.display()
+
+#output :
+
+30 40
+70
+
+02) Multilevel inheritence :
+ 
+It is the type of inheritence in which the properties of one class will
+be derived into another class by considering more than one level.
+
+
+Syntax :
+
+  class c1:
+  	[S.B]
+  
+  class c2(c1):
+  	[S.B]
+  
+  class c3(c2):
+  	[S.B]
+
+  .
+  .
+  .
+  .
+  class cn(cn-1):
+  	[S.B]
+
+
+Example:01
+
+'''
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+class B(A):
+    m=50
+    n=60
+
+class C(B):
+    x=70
+    y=80
+
+ob1=C(30,40)
+
+print(ob1.a,ob1.b,ob1.c,ob1.d,ob1.m,ob1.n,ob1.x,ob1.y)
+'''
+#output : 10 20 30 40 50 60 70 80
+
+Exapmle:02 (REAL TIME EXAMPLE)
+
+class Bank:
+    bname='SBI'
+    bloc='jayanagar'
+    bifsc='SBIN007'
+
+    def __init__(self,name,phno,accno):
+        self.name=name
+        self.phno=phno
+        self.accno=accno
+
+    def display(self):
+        print(self.name,self.phno,self.accno)
+
+    @classmethod
+    def disp(cls):
+        print(cls.bname,cls.bloc,cls.bifsc)
+
+class Atm(Bank):
+
+    def __init__(self,name,phno,accno,pin):
+        super().__init__(name,phno,accno)
+        self.pin=pin
+        self.bal=0
+
+    def check_bal(self):
+        x=int(input('Enter the pin :'))
+        if x==self.pin:
+            print(f'The available balance is {self.bal}')
+        else:
+            print('Incorrect pin')
+
+    def deposite(self):
+        x=int(input('Enter the pin :'))
+        if x==self.pin:
+            amt=int(input('Enter the amount :'))
+            self.bal+=amt
+            print(f'Amount of {amt} has been deposited')
+        else:
+            print('Incorrect pin')
+        
+class User(Atm):
+
+    def __init__(self,name,phno,accno,pin,cardno):
+        super().__init__(name,phno,accno,pin)
+        self.cardno=cardno
+
+    def display(self):
+        super().display()
+        print(self.cardno)
+
+c1=User('John',8431353667,123456789,9988,7539514682)
+c2=User('smith',9902110556,456789123,5555,966325874)
+
+#output :
+
+>>> c1.disp()
+SBI jayanagar SBIN007
+>>> c1.display()
+John 8431353667 123456789
+7539514682
+>>> c1.check_bal()
+Enter the pin :1234
+Incorrect pin
+>>> c1.check_bal()
+Enter the pin :9988
+The available balance is 0
+>>> c1.deposite()
+Enter the pin :9988
+Enter the amount :7000
+Amount of 7000 has been deposited
+>>> c1.check_bal()
+Enter the pin :9988
+The available balance is 7000

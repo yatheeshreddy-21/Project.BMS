@@ -1,0 +1,26 @@
+INHERITENCE:
+
+The process of deriving the properties from One class to another class
+is called as Inheritence.
+
+Advantages:
+
+01) We can avoid code repetition
+02) We can reduce number of lines of code
+03) Therefore Time taken for execution of programm will be less
+04) Hence, We can increase the efficiency of code.
+
+
+Parent/Super/Base class  : The class from which the properties are being
+                           derived is called a parent class.
+
+Child/Sub/Derived class  : The class to which the properties are being
+                           derived is called a child class.
+
+There are 5 types of Inheritence in python :
+
+1) Single level inheritence
+2) Multi level inheritence
+3) Multiple inheritence
+4) Hierarchial inheritence
+5) Hybrid inheritence 

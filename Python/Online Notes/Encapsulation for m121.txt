@@ -1,0 +1,211 @@
+ENCAPSULATION:
+
+It is a phenomenon of wrapping up the data to provide security
+to the members of the class or members of object by using 
+access specifiers.
+
+Access specifiers:
+
+It tells us whether the user is having permission to access the 
+members outside of the class or not.
+
+There are 3 types in access specifiers:
+
+1) public 
+2) protected
+3) private
+
+1) public :
+
+--> By default each and every members of class/object will be 
+    having public access specifier.
+
+--> that means we can easily access the members outside of class
+
+2) protected ('_'):
+
+--> we will use '_' before the names of members of class/object
+    to get protected access specifier.
+
+--> But still the data/members are not protected because we are 
+    able to access them outside of the class easily.
+
+--> To overcome this drawback we should use private access specifier.
+
+3) private ('__'):
+
+--> we should write '__' before the names of members of class/object
+    to get private access specifier.
+
+--> Once after making members as private , we can not access and modify 
+    them ouside of the class easily
+
+--> But still we can access / modify private members outside of the class by 
+    following any one of three ways.
+
+Those three ways are -
+
+1) By using syntax
+2) By using methods
+3) By using @property decorator
+
+1) By using syntax :
+
+   1> To Access : obj/cname._cname__var/methodname
+
+   2> To Modify : obj/cname._cname__var = newval
+
+example :
+
+class A:
+    __a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+    def __display(self):
+        print(self.c,self.d)
+
+    @classmethod
+    def disp(cls):
+        print(cls.a,cls.b)
+
+ob1=A(30,40)
+
+#print(A._A__a)
+#ob1._A__display()
+
+
+print(A._A__a)
+A._A__a=777
+print(A._A__a)
+
+
+
+2) By using methods :
+
+--> We can access private members outside of the class by using 
+    get() and set() user defined methods.
+
+Example :
+
+class School:
+    __sname='st.joseph'
+    sloc='jayanagar'
+
+    def __init__(self,name,phno):
+        self.name=name
+        self.__phno=phno
+
+    def get(self):
+        return self.__phno
+
+    def set(self,new):
+        self.__phno=new
+
+    @classmethod
+    def get1(cls):
+        return cls.__sname
+
+s1=School('john',8431353667)
+
+#print(s1.get())
+
+
+print(s1.get())
+s1.set(9902110554)
+print(s1.get())
+
+#print(s1.get1())
+
+
+3) By using @property decorator :
+
+There are 4 steps,
+
+step:01  Create two methods to get and set the values
+step:02  Pass @property decorator to the first method(i.e.,get method).
+step:03  Pass @Var.setter to the second method(i.e.,set method).
+step:04  Change the names of the methods get & set  with the variable name
+         that you want to access and modify.
+
+Example :
+
+class School:
+    sname='st.joseph'
+    sloc='jayanagar'
+
+    def __init__(self,name,phno):
+        self.name=name
+        self.__phno=phno
+
+    @property
+    def phno(self):
+        return self.__phno
+
+    @phno.setter
+    def phno(self,new):
+        self.__phno=new
+
+
+s1=School('john',8431353667)
+
+#print(s1.phno)
+
+print(s1.phno)
+s1.phno=9902110556
+print(s1.phno)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

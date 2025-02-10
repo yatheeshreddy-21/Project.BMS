@@ -1,0 +1,178 @@
+COMPREHENSION :
+
+It is a phenomenon of creating a new mutable collection by
+using single line of instruction.
+
+There are 3 types of comprehensions :
+
+1) list comprehension
+2) set comprehension
+3) dict comprehension
+
+--> We can perform comprehension only on mutable collections
+    because we can modify the values of mutable collections
+    in th same address.
+--> Whereas in immutable collections we can not modify the
+    existing values that's why comprehension is not possible
+    on immutable collections.
+
+1) list comprehension : It is a phenomenon of creating a new 
+                        list collection by using single line of instruction.
+
+Syntax :
+
+01) var=[val for var in col]
+02) var=[val for var in col if cond]
+03) var=[val1 if cond else val2 for var in col]
+04) var=[val for var1 in col for var2 in col ....... if cond]
+
+#PROGRAMS :
+
+#01) WAP to create a list with n natural numbers
+
+#input  : 6
+#output : [ 1,2,3,4,5,6 ]
+
+#by using normal python
+'''
+num=int(input())
+out=[]
+for i in range(1,num+1):
+    out.append(i)
+print(out)
+'''
+
+#by using list comprehension
+'''
+out = [ i for i in range(1,int(input())+1) ]
+print(out)
+'''
+
+#02) WAP to store square of n natural numbers into a list
+'''
+out = [ i**2 for i in range(1,int(input())+1) ]
+print(out)
+'''
+
+#03) WAP to store square of all even numbers and cube of all odd numbers
+#    into a list between 1 to 100
+'''
+out = [ i**2 if i%2==0 else i**3 for i in range(1,101) ]
+print(out)
+'''
+
+#04) WAP to extract all the integers from given list
+'''
+out = [ i for i in eval(input()) if type(i)==int ]
+print(out)
+'''
+
+#05) WAP to get the following output
+
+#  input  :  'program on list compr'
+#  output :  [ 7 , 'no' , 'tsil' , 5 ]
+
+#using normal python
+'''
+x=input().split()
+out=[]
+for i in x:
+    if len(i)%2==0:
+        out.append(i[::-1])
+    else:
+        out.append(len(i))
+print(out)
+'''
+
+#using list comprehension
+'''
+out = [ i[::-1] if len(i)%2==0 else len(i) for i in input().split() ]
+print(out)
+'''
+
+
+#06) WAP to extract key value pairs from the dictionary only if value is integer.
+
+#input  :  { 'a':100 , 'b':3.5 , 'c':300 , 'd':[1,2,3] }
+#output :  [ ('a',100) , ('c',300) ]
+'''
+d=eval(input())
+out = [ (i,d[i]) for i in d if type(d[i])==int ]
+print(out)
+'''
+
+#07) WAP to extract only prime numbers from given list
+
+#  input  :  [ 3,10,25,7,88 ]
+#  output :  [ 3,7 ]
+'''
+def prime(num):
+    for i in range(2,num):
+        if num%i==0:
+            return False
+    return True
+
+out=[i for i in eval(input()) if prime(i)]
+print(out)
+'''
+
+#08) input  :  'hai'
+#output :  [ ('h',0) , ('h',1) , ('h',2) , ('a',0) , ('a',1) , ('a',2) , ('i',0) , ('i',1) , ('i',2) ]
+
+#by using normal python
+'''
+s=input()
+out=[]
+for i in s:
+    for j in range(3):
+        out.append((i,j))
+print(out)
+'''
+
+#using list comprehension
+'''
+out = [ (i,j) for i in input() for j in range(3) ]
+print(out)
+'''
+
+2) set comprehension :  It is a phenomenon of creating a new 
+                        set collection by using single line of instruction.
+
+Syntax :
+
+01) var={val for var in col}
+02) var={val for var in col if cond}
+03) var={val1 if cond else val2 for var in col}
+04) var={val for var1 in col for var2 in col ....... if cond}
+
+PROGRAMS:
+
+#01) WAP to create a set of n natural numbers
+
+#  input  : 5
+#  output : {1,2,3,4,5}
+'''
+out = { i for i in range(1,int(input())+1) }
+print(out)
+'''
+
+#02) WAP to extract all float values present in a given list
+'''
+out = { i for i in eval(input()) if type(i)==float }
+print(out)
+'''
+
+#03) WAP to reverse a string if it is not a palindrome and print as it is
+#    if it is palindrome from given list of strings
+
+#  input  :  ['mom','king','hi']
+#  output :  {'gnik', 'mom', 'ih'}
+'''
+out = { i[::-1] if i!=i[::-1] else i for i in eval(input()) }
+print(out)
+'''
+#ASSIGNMENT QUESTION
+
+#04) input  :  'hai'
+#output :  { ('h',0) , ('h',1) , ('h',2) , ('a',0) , ('a',1) , ('a',2) , ('i',0) , ('i',1) , ('i',2) }
+

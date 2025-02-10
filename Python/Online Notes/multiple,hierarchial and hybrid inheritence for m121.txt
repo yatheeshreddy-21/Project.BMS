@@ -1,0 +1,251 @@
+03) Multiple inheritence :
+ 
+It is the type of inheritence in which the properties from multiple parent 
+classes will be inherited to single child class.
+
+Syntax :
+
+  class C1:
+  	[S.B]
+  
+  class C2:
+  	[S.B]
+  
+  class C3:
+  	[S.B]
+
+  .
+  .
+  .
+  .
+  class Cn:
+  	[S.B]
+
+
+
+  class Cc(C1,C2,C3,......Cn):
+	[S.B]
+
+Example:01
+
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+class B:
+    a=50
+    n=60
+
+class C:
+    a=70
+    q=80
+
+
+class D(B,C,A):
+    x=90
+    y=100
+
+ob1=D(30,40)
+print(ob1.a)
+
+#output : 50
+
+
+Example:02
+
+class Addition:
+
+    @staticmethod
+    def add(a,b):
+        return a+b
+
+class Subtraction:
+
+    @staticmethod
+    def sub(a,b):
+        return a-b
+
+class Multiplication:
+
+    @staticmethod
+    def mul(a,b):
+        return a*b
+
+
+class Calculator(Addition,Subtraction,Multiplication):
+
+    @staticmethod
+    def div(a,b):
+        return a/b
+
+cal=Calculator()
+
+print(cal.add(4,6))
+print(cal.sub(10,2))
+print(cal.mul(3,6))
+print(cal.div(4,2))
+
+#output:
+'''
+10
+8
+18
+2.0
+'''
+
+
+04) Hierarchial Inheritence:
+
+           It is the phenomenon of inheriting properties from
+single parent class to multiple child classes.
+
+Syntax:
+
+class Pc:
+   [S.B]
+
+class Cc1(Pc):
+   [S.B]
+
+class Cc2(Pc):
+   [S.B]
+.
+.
+.
+class Ccn(Pc):
+   [S.B]
+
+
+Example:01
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+class B(A):
+    m=50
+    n=60
+
+class C(A):
+    x=70
+    y=80
+
+
+ob1=B(30,40)
+ob2=C(77,88)
+
+print(ob1.a,ob1.b,ob1.c,ob1.d,ob1.m,ob1.n)
+print(ob2.a,ob2.b,ob2.c,ob2.d,ob2.x,ob2.y)
+
+#output :
+
+10 20 30 40 50 60
+10 20 77 88 70 80
+
+Example:02  (Real time example)
+'''
+class Restaurant:
+    Rname='Empire'
+    Rloc='vijayanagar'
+    menu={ 'chicken biryani' : 170 , 'paneer roll' : 80 , 'coke' : 35 }
+
+    @classmethod
+    def disp_menu(cls):
+        for i in cls.menu:
+            print(i,cls.menu[i])
+
+class Zomato(Restaurant):
+
+    def __init__(self,name,phno,loc):
+        self.name=name
+        self.phno=phno
+        self.loc=loc
+        self.cart={}
+
+    def order(self):
+        item=input('Enter the item name :')
+        self.cart[item]=self.menu[item]
+        print('item added')
+        x=input('Do you want to add more or not (y/n) :')
+        if x=='y' or x=='Y':
+            self.order()
+        else:
+            print('Thank You !!')
+
+    def disp_cart(self):
+        print(self.cart)
+
+    def display(self):
+        print(self.name,self.phno,self.loc)
+
+c1=Zomato('john',8431353667,'Rajajinagar')
+
+#output:
+
+>>> c1.display()
+john 8431353667 Rajajinagar
+>>> c1.disp_menu()
+chicken biryani 170
+paneer roll 80
+coke 35
+>>> c1.order()
+Enter the item name :paneer roll
+item added
+Do you want to add more or not (y/n) :y
+Enter the item name :coke
+item added
+Do you want to add more or not (y/n) :n
+Thank You !!
+>>> c1.disp_cart()
+{'paneer roll': 80, 'coke': 35}
+
+
+
+class Swiggy(Restaurant):
+
+
+'''
+
+
+05) Hybrid Inheritence:
+
+It is a combination of more than one type of inheritence.
+
+Example:
+
+class A:
+    a=10
+    b=20
+
+    def __init__(self,c,d):
+        self.c=c
+        self.d=d
+
+class B:
+    m=50
+    n=60
+
+class C(A,B):
+    p=70
+    q=80
+
+class D(C):
+    x=90
+    y=100
+
+class E(C):
+    z=110
+
+
+ob1=D(30,40)
+
+print(ob1.a,ob1.b,ob1.c,ob1.d,ob1.m,ob1.n,ob1.p,ob1.q,ob1.x,ob1.y)
+
+#output : 10 20 30 40 50 60 70 80 90 100

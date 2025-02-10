@@ -1,0 +1,20 @@
+Formal parameters:
+
+These are the parameters which are declared at the
+time of function declaration in formal argument block.
+
+Actual parameters:
+
+These are the parameters which are declared at the time of 
+fuction call in actual argument block.
+
+Example:
+
+def disp(a,b,c):
+    print(a,b,c)
+disp(1,2,3)
+
+--> In the above example a,b,c are the formal parameters and
+    1,2,3 are the actual parameters.
+
+    
