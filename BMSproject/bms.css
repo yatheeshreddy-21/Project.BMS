@@ -1,0 +1,278 @@
+*{
+    margin: 0px;
+}
+header{
+    background-color:white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
+.search>input{
+    height: 30px;
+    width: 600px;
+    border: 0px solid gray;
+    border-radius: 5px;
+    padding: 0px 30px;
+}
+.search img{
+    position: relative;
+    top: 5px;
+    left: 30px;
+    height: 20px;
+}
+.account select{
+    background-color: inherit;
+    border: none;
+    width: 100px;
+}
+.account>a{
+    background-color: rgb(235, 70, 97);
+    border: none;
+    height: 23px;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+    padding:  5px 10px;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    align-content: center;
+}
+nav{
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    padding: 0px 40px;
+    background-color: whitesmoke;
+    align-items: center;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    margin: 0px 5px;
+}
+marquee{
+    background-color: rgb(221, 217, 217);
+    margin: 5px 0px;
+}
+marquee img{
+    border-radius: 25px;
+}
+.section1,.section3{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+    font-family: sans-serif;
+}
+.section1 a{
+    text-decoration: none;
+    color: red;
+}
+.section2,.section4{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.section2 img{
+    width: 260px;
+    border-radius: 10px;
+    position: relative;
+    top: 60px;
+    transition:0s;
+}
+article img:hover{
+    top: 0px;
+}
+.card1{
+    width: 260px;
+}
+.section4 img{
+    width: 260px;
+    border-radius: 10px;
+}
+.section7{
+    display: flex;
+    justify-content: space-between;
+}
+.section7 img{
+    width: 260px;
+    height: 360px;
+    border-radius: 10px;   
+}
+.backdrop{
+    background-color: rgb(1, 1, 16);
+    color: white;
+}
+.section8{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+    font-family: sans-serif;
+}
+.section8 a{
+    color: red;
+    text-decoration: none;
+}
+.section9{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.section9 img{
+    width: 260px;
+    border-radius: 10px;
+    position: relative;
+    top: 118px;
+    transition:1s;
+}
+.card3{
+    width: 260px;
+}
+.section10{
+    display: flex;
+    padding: 0px 40px;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+.section10 a{
+    text-decoration: none;
+    color: red;
+}
+.section11{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.section11 img{
+    width: 260px;
+    border-radius: 10px;
+    position: relative;
+    top: 92px;
+    transition:1s;
+}
+.card4{
+    width: 260px;
+}
+.section12{
+    display: flex;
+    padding: 0px 40px;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+.section12 a{
+    text-decoration: none;
+    color: red;
+}
+.section13{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.section13 img{
+    width: 260px;
+    border-radius: 10px;
+    position: relative;
+    top: 75px;
+    transition:1s;
+}
+.card5{
+    width: 260px;
+}
+.section14{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+    font-family: sans-serif;
+}
+.section14 a{
+    text-decoration: none;
+    color: red;
+}
+.section15{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.section15 img{
+    border-radius: 10px;
+    width: 260px;
+    position: relative;
+    top: 77px;
+    transition:1s;
+}
+.card6{
+    width: 260px;
+}
+.section16{
+    display: flex;
+    font-family: sans-serif;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
+.section16 a{
+    text-decoration: none;
+    color: red;
+}
+.section17{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.section17 img{
+    width: 230px;
+    border-radius: 10px;
+    position: relative;
+    top: 93px;
+    transition:1s;
+}
+.card7{
+    width: 260px;
+}
+table{
+    background-color: rgb(218, 216, 216);
+}
+.footer{
+    background-color: rgb(1, 1, 16);
+    color: white;
+
+}
+.footer1{
+    display: flex;
+    padding: 10px 80px;
+    align-items: center;
+}
+.footer1 button{
+    background-color:rgb(235, 70, 97);
+    color: white;
+    border-radius: 5px;
+    width: 130px;
+    height: 50px;
+    margin-left: 270px;
+}
+.footer1 img{
+    width: 30px;
+}
+.footer3{
+    background-color: rgb(1, 1, 16);
+    color: rgb(220, 216, 216);
+}
+.footer4{
+    margin-left: 100px;
+}
+.movies span:hover{
+    color: red;
+}
+.footer5{
+    
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      
+      
+    background-color: rgb(1, 1, 16);
+    color: rgb(226, 217, 217);
+}

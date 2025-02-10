@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Tickets, Plays, Sports, Events & Cinemas near Bengaluru - BookMyShow Bengaluru.</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRareXwecIJ_COP-v3kUhJnSAn9aJ1H-2ODA&s">
+    <style>
+        fieldset {
+            display: inline-block;
+            width: 600px;
+        }
+        #button1 {
+            background-color: red;
+            color: white;
+            width: 100px;
+            height: 30px;
+        }
+        .get {
+            color: darkgreen;
+        }
+        #num {
+            width: 200px;
+            height: 30px;
+        }
+        #num1 {
+            height: 35px;
+            width: 50px;
+        }
+        button {
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="validateForm(event)" align="center">
+        <fieldset align="center">
+            <legend>Sign In</legend><br>
+            <p class="get"><b>Get Started</b></p><br>
+            <button type="button">Continue With Google</button><br><br>
+            <button type="button">Continue With Email</button><br><br>
+            <button type="button">Continue With Apple</button><br><br>
+            <p>OR</p><br>
+            <select id="num1">
+                <option>+91</option>
+                <option>+16</option>
+                <option>+07</option>
+            </select>
+            <input type="tel" pattern="[0-9]{10}" id="num" placeholder="Enter phone number"><br><br><br>
+            <input type="checkbox" required>
+            <label>I Agree to the Terms & Conditions and Privacy Policy</label><br><br>
+            <button type="submit" id="button1"><b>SUBMIT</b></button>
+        </fieldset>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            let phoneNumber = document.getElementById("num").value;
+            let phonePattern = /^[0-9]{10}$/;
+
+            if (phonePattern.test(phoneNumber)) {
+                window.location.href = "bms.html"; // Redirect on success
+            } else {
+                alert("Please enter a valid 10-digit phone number.");
+            }
+        }
+    </script>
+</body>
+</html>
